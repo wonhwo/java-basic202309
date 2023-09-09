@@ -5,7 +5,7 @@ public class Hunter extends Player {
     private String  beast;
     public Hunter(String nickName) {
         super(nickName);
-        this.beast = "먕먕이";
+        this.beast = "댕댕이";
     }
 
     @Override
