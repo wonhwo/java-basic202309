@@ -5,6 +5,7 @@ import java.util.Scanner;
 // 역할: 회원관리 앱의 입출력을 담당
 public class MemberView {
 
+
     Scanner sc;
     MemberRepository mr;
 
@@ -48,7 +49,7 @@ public class MemberView {
                         signUp();
                     }
                     else{
-                        System.out.println("# 최대 인원수를 초과하였습니다.");
+                        System.out.println("# 최대 등록 인원수를 초과하였습니다.");
                         stop();
                     }
                     break;
@@ -86,30 +87,26 @@ public class MemberView {
     private void showMemberRestore() {
         String email=input("# 복구할 이메일을 입력하여주세요");
         String password=input("# 복구할 비밀번호를 입력하여주세요");
-        boolean result= mr.restoreMember(email,password);
-        if(!result){
-            System.out.printf("복구에 실패하였습니다.\n #입력값이 잘못되거나 최대인원 10인을 초과하였습니다.\n");
-            stop();
-        }
+        mr.deleteMember(email,password,true);
     }
 
     private void showDeleteMember() {
         String email=input("# 삭제할 이메일을 입력하여주세요");
         String password=input("# 삭제할 비밀번호를 입력하여주세요");
-        mr.deleteMember(email,password);
+        mr.deleteMember(email,password,false);
     }
 
     private void memberShow() {
         String email=input("# 정보를 검색할 이메일을 입력해주세요");
-        Member member= mr.showAllMembers(email);
-        if(member==null){
-            System.out.println("해당하는 이메일이 없습니다.");
+        Member member= mr.findMemberByEmail(email,false);
+        if(member!=null){
+            member.showDetailInfo();
             stop();
-            return;
         }
-        String convertGender=member.gender==Gender.MALE?"남성":"여성";
-        System.out.printf("이메일: %s\n 이름: %s\n 비밀번호: %s\n 성별: %s\n나이: %s\n",member.email,member.memberName,member.password,convertGender,member.age);
-        stop();
+        else{
+            System.out.println("\n# 조회 결과가 없습니다.");
+            stop();
+        }
     }
 
     private void changePassword() {
@@ -117,7 +114,7 @@ public class MemberView {
         String email=input("# 수정 대상의 이메일");
 
         //수정 대상 탐색
-        Member member = mr.findMemberByEmail(email);
+        Member member = mr.findMemberByEmail(email,false);
 
         //회원이 탐색 됨
         if(member!=null){

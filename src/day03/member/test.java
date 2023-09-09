@@ -10,7 +10,7 @@ public class test {
         String email="ttt@yyy.com";
         boolean flag1 =mr.isDuplicatedEmail(email);
         System.out.println("flag1 = " + flag1);
-        Member foundMember= mr.findMemberByEmail(email);
+        Member foundMember= mr.findMemberByEmail(email,false);
         System.out.println("foundMember.inform() = " + foundMember.inform());
         
     }
