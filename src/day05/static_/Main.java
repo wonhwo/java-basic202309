@@ -25,8 +25,8 @@ public class Main {
         Utility.input("이름 : ");
 
         random();
-       println("c2.x = " + c2.x);
-        println("c2.y = " + c2.y);
+//       println("c2.x = " + c2.x);
+//        println("c2.y = " + c2.y);
 
         Count.m1(c1);
         Count.m1(c2);
