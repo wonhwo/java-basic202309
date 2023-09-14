@@ -4,8 +4,6 @@ import java.util.Scanner;
 
 // 역할: 회원관리 앱의 입출력을 담당
 public class MemberView {
-
-
     Scanner sc;
     MemberRepository mr;
 
@@ -185,6 +183,5 @@ public class MemberView {
     void stop(){
         System.out.print("========엔터 눌러서 계속===========");
         sc.nextLine();
-
     }
 }

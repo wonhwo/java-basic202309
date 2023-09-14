@@ -6,7 +6,7 @@ public class Utility {
     static Scanner s=new Scanner(System.in);
 
     public static void makeLine(){
-//        println("=====================================");
+        System.out.println("=====================================");
 
     }
     //문자열을 입력받는 기능
