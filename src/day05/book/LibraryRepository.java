@@ -17,7 +17,9 @@ public class LibraryRepository {
 
     // 도서들의 정보
     private static Book[] bookList;
-
+//static initalizer: 정적 초기화자
+    //인스턴스 필드는 생성자로 초기화
+    //스태틱 필드는 정적 초기화자로 초기화
     static {
         bookList = new Book[]{
                 new CookBook("기적의 집밥책", "김해진", "청림라이프", true),
