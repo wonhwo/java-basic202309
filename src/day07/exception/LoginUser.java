@@ -17,7 +17,7 @@ public class LoginUser {
             if (userPassword.equals(inputPassword)) {
                 return "SUCCESS";
             } else {
-                throw new LoginFailException("비밀번호가 올바르지 않음")
+                throw new LoginFailException("비밀번호가 올바르지 않음");
             }
         } else {
             throw new LoginFailException("이맃하는 아이디가 없음");
