@@ -48,12 +48,12 @@ public class ArtistRepository {
     }
 
     public void search(String singer) {
-        Artist artist = getArtist(singer);
-        Set<String> s = artist.getSongList();
-        List<String> songArray = new ArrayList<>(s);
-        for (int i = 0; i < s.size(); i++) {
-            System.out.printf("* %d. %s\n", i+1, songArray.get(i));
-        }
+            Artist artist = getArtist(singer);
+            Set<String> s = artist.getSongList();
+            List<String> songArray = new ArrayList<>(s);
+            for (int i = 0; i < s.size(); i++) {
+                System.out.printf("* %d. %s\n", i+1, songArray.get(i));
+            }
     }
 
     public static Map<String, Artist> getArtistList() {

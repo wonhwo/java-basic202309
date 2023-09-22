@@ -55,10 +55,11 @@ public class ArtistView {
         if(ar.isRegistered(singer)){
             System.out.println("#" + singer + "님의 노래목록");
             System.out.println("=============================");
+            ar.search(singer);
         }else {
             System.out.println("해당 가수는 등록되지 않았습니다.");
         }
-        ar.search(singer);
+
     }
     //신규 가수를 map에 추가하는 기능
     private  void singerRegistrater(){
