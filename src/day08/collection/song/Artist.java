@@ -33,4 +33,12 @@ public class Artist {
     public void setSongList(Set<String> songList) {
         this.songList = songList;
     }
+
+    @Override
+    public String toString() {
+        return "Artist{" +
+                "name='" + name + '\'' +
+                ", songList=" + songList +
+                '}';
+    }
 }
