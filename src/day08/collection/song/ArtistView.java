@@ -28,6 +28,7 @@ public class ArtistView {
 
     private void viewProcess() {
         while (true) {
+            ar.loadFile();
             mainView();
             String menuNum = input(">> ");
             switch (menuNum) {
@@ -81,6 +82,7 @@ public class ArtistView {
                 System.out.println("# ["+singTitle+"] 곡은 이미 등록된 곡입니다.");
             }
         }
+        ar.autoSave();
 
     }
     public String input(String message){

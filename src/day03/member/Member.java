@@ -27,7 +27,7 @@ public class Member {
         this.regDate = LocalDate.now();
     }
 //    회원정보를 문자열로 만들어서 리턴하는 기능
-    String inform(){
+    public String inform(){
         String convertGender=this.gender== MALE?"남성":"여성";
         return String.format("# %d번 | %s | %s | %s | %d세",this.memberId,this.email,this.memberName,convertGender,this.age);
     }

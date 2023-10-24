@@ -1,8 +1,14 @@
 package day08.collection.song;
 
+import day10.io.rw.FilePath;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.Set;
 
-public class Artist {
+public class Artist implements Serializable {
     private String name; //가수명
     private Set<String> songList;//노래 목록
 
@@ -41,4 +47,5 @@ public class Artist {
                 ", songList=" + songList +
                 '}';
     }
+
 }
