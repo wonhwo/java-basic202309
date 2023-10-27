@@ -28,6 +28,6 @@ public class Finding {
         //음식중 칼로리가 가장 낮은 음식
         Optional<Dish> min = menuList.stream()
                 .min(comparing(Dish::getCalories));
-        System.out.println("dish = " + dish);
+        //System.out.println("dish = " + dish);
     }
 }
