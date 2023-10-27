@@ -27,7 +27,7 @@ public class Filtering {
         menuList.stream()
                 .filter(dish -> dish.isVegeterian())
                 .collect(toList())
-                .forEach(dish -> System.out.println(dish));
+                .forEach(System.out::println);
         ;
         System.out.println("===============육류이면서 600칼로리 미만=======");
         menuList.stream()

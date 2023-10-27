@@ -65,7 +65,7 @@ public class Mapping {
             요리목록에서 메뉴 이름과 칼로리를 추춣고 싶다.
          */
         menuList.stream()
-                .map(dish->new simpleDish(dish))
+                .map(simpleDish::new)
                 .collect(Collectors.toList())
                 .forEach(d-> System.out.println(d));
 
